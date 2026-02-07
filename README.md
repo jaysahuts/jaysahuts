@@ -1,6 +1,6 @@
 # Hi there, I'm Jay Sah 👋
 
-### 🏗️ Site Engineer | High-Rise Specialist | Construction Tech Enthusiast
+### 🏗️ Site Engineer | High-Rise Building | Construction Tech Enthusiast
 **Based in Sydney, NSW**
 
 I am a **Site Engineer** with 4+ years of experience delivering major high-rise infrastructure. Currently, I am working with **ALAND** on the **$300M+ Skyview Project** in Castle Hill (3 towers, 500+ apartments).
