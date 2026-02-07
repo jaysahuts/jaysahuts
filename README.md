@@ -51,7 +51,6 @@ I specialize in **Structure-to-Facade** delivery, managing QA/QC for complex res
 
 ### 📫 Connect with Me
 * **LinkedIn:** [linkedin.com/in/jaysahuts](https://linkedin.com/in/jaysahuts)
-* **Email:** jaysahuts@gmail.com
 * **Location:** Sydney, Australia
 
 <!--
