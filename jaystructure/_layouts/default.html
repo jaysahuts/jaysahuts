@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncatewords: 30 }}{% else %}{{ site.description }}{% endif %}" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="site-logo">Jay<span>.</span>Structure</a>
+      <nav class="site-nav">
+        <a href="{{ '/articles/' | relative_url }}">Articles</a>
+        <a href="{{ '/engineering/' | relative_url }}">Engineering</a>
+        <a href="{{ '/scripture/' | relative_url }}">Scripture</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Jay<span>.</span>Structure</div>
+      <div class="footer-links">
+        <a href="{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a>
+        <a href="{{ site.social.podcast }}" target="_blank" rel="noopener">Podcast</a>
+        <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </div>
+      <p class="footer-copy">© {{ 'now' | date: "%Y" }} Jay Structure · Sydney, Australia</p>
+    </div>
+  </footer>
+
+</body>
+</html>

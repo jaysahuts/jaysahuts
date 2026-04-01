@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<article class="post-wrapper">
+
+  <div class="post-category {% if page.category == 'scripture' %}bible{% elsif page.category == 'architecture' %}arch{% endif %}">
+    {{ page.category | upcase | default: "ENGINEERING" }}
+  </div>
+
+  <h1 class="post-title">{{ page.title }}</h1>
+
+  <div class="post-meta">
+    <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+    <span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+    {% if page.tags %}<span>{{ page.tags | join: " · " }}</span>{% endif %}
+  </div>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <!-- Back link -->
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+    <a href="{{ '/articles/' | relative_url }}" style="font-size:0.85rem; color:var(--muted); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s;"
+       onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">
+      ← All Articles
+    </a>
+  </div>
+
+</article>

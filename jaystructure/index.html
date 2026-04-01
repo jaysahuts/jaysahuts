@@ -1,0 +1,67 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-label">// Site Engineer · Sydney, Australia</p>
+    <h1>Engineering <em>meets</em> Scripture meets Architecture.</h1>
+    <p class="hero-desc">
+      I break down Australian construction standards, NCC compliance, structural engineering principles, and biblical history — translating complexity into content anyone can understand.
+    </p>
+    <a href="{{ '/articles/' | relative_url }}" class="hero-cta">Read Articles →</a>
+  </div>
+
+  <div class="hero-channels">
+    <a href="{{ '/engineering/' | relative_url }}" class="channel-card eng">
+      <div class="channel-icon">⚙️</div>
+      <div>
+        <div class="channel-name">Construction & Engineering</div>
+        <div class="channel-desc">NCC compliance, AS standards, high-rise construction</div>
+      </div>
+    </a>
+    <a href="{{ '/scripture/' | relative_url }}" class="channel-card bible">
+      <div class="channel-icon">📖</div>
+      <div>
+        <div class="channel-name">Bible & Scripture</div>
+        <div class="channel-desc">Biblical history, ancient civilisations, Scripture study</div>
+      </div>
+    </a>
+    <a href="{{ '/architecture/' | relative_url }}" class="channel-card arch">
+      <div class="channel-icon">🏛️</div>
+      <div>
+        <div class="channel-name">Architecture Marvels</div>
+        <div class="channel-desc">Engineering wonders, structural feats, historical builds</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Latest Articles -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Latest Articles</h2>
+    <a href="{{ '/articles/' | relative_url }}" class="section-link">All articles →</a>
+  </div>
+
+  <div class="article-grid">
+    {% for post in site.posts limit:6 %}
+    {% assign cat_class = "" %}
+    {% if post.category == "scripture" %}{% assign cat_class = "bible" %}
+    {% elsif post.category == "architecture" %}{% assign cat_class = "arch" %}
+    {% else %}{% assign cat_class = "eng" %}{% endif %}
+
+    <a href="{{ post.url | relative_url }}" class="article-card {{ cat_class }}">
+      <div class="card-category">{{ post.category | default: "Engineering" }}</div>
+      <h3 class="card-title">{{ post.title }}</h3>
+      <p class="card-excerpt">{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
+      <div class="card-meta">
+        <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="card-read-more">Read →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>

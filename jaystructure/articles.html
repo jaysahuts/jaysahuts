@@ -1,0 +1,53 @@
+---
+layout: default
+title: Articles
+permalink: /articles/
+---
+
+<div class="archive-header">
+  <h1>All Articles</h1>
+  <p>Engineering · Scripture · Architecture</p>
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="filterPosts('all', this)">All</button>
+    <button class="filter-tab" onclick="filterPosts('engineering', this)">Engineering</button>
+    <button class="filter-tab" onclick="filterPosts('scripture', this)">Scripture</button>
+    <button class="filter-tab" onclick="filterPosts('architecture', this)">Architecture</button>
+  </div>
+</div>
+
+<section class="section" style="padding-top:1rem;">
+  <div class="article-grid" id="posts-grid">
+    {% for post in site.posts %}
+    {% assign cat_class = "" %}
+    {% if post.category == "scripture" %}{% assign cat_class = "bible" %}
+    {% elsif post.category == "architecture" %}{% assign cat_class = "arch" %}
+    {% else %}{% assign cat_class = "eng" %}{% endif %}
+
+    <a href="{{ post.url | relative_url }}"
+       class="article-card {{ cat_class }}"
+       data-category="{{ post.category | default: 'engineering' }}">
+      <div class="card-category">{{ post.category | default: "Engineering" }}</div>
+      <h3 class="card-title">{{ post.title }}</h3>
+      <p class="card-excerpt">{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
+      <div class="card-meta">
+        <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="card-read-more">Read →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+function filterPosts(category, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.article-card').forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>

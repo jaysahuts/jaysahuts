@@ -1,0 +1,42 @@
+title: Jay Structure
+tagline: Engineering. Scripture. Architecture.
+description: Translating complex engineering, NCC compliance, and biblical history into clear, accessible content.
+url: "https://yourusername.github.io"
+baseurl: ""
+
+author:
+  name: Jay
+  role: Site Engineer | Structural Engineer | Educator
+  location: Sydney, Australia
+
+# Social links
+social:
+  youtube: https://youtube.com/@JayStructure
+  podcast: https://open.spotify.com/show/yourshow
+  linkedin: https://linkedin.com/in/yourprofile
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections & Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
