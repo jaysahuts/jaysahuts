@@ -40,6 +40,12 @@ I specialize in **Structure-to-Facade** delivery, managing QA/QC for complex res
 
 ---
 
+### 📝 Articles
+
+* [How High-Rise Buildings Are Built in Australia: A Site Engineer's Guide](high-rise-building-construction.md) — A practical breakdown of the full construction sequence for high-rise residential buildings, covering foundations, superstructure, facade, fit-out, NCC 2025 changes, and the role of a site engineer.
+
+---
+
 ### 🎓 Education & Certifications
 
 * **Master of Engineering (Structural)** | University of Technology Sydney (UTS)
